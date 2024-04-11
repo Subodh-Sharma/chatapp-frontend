@@ -16,6 +16,7 @@ export const SocketContextProvider = ({ children }) => {
 	useEffect(() => {
 		if (authUser) {
 			const socket = io("https://chatapp-server-lilac.vercel.app", {
+				transports: ['websocket'],
 				query: {
 					userId: authUser._id,
 				},
